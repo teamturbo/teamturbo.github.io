@@ -31,22 +31,22 @@ let myLayers = {
 };
 
 //Default Hintergrundkarte
-myMap.addLayer(myLayers.geolandbasemap);
-
+myMap.addLayer(myLayers.bmaporthofoto30cm);
 //Default Overlaykarte
-//myMap.addLayer(biketourTrack);
+myMap.addLayer(myLayers.bmapoverlay);
 
 //Kartenansichten schalten und zu Karte hinzufügen(aktivieren)
 let myMapControl = L.control.layers({
     "OSM BaseMap": myLayers.osmlayer,
     "BaseMap.at": myLayers.geolandbasemap,
-    "Orthofoto": bmaporthofoto30cm,
+    "Orthofoto": myLayers.bmaporthofoto30cm,
 }, {
         //"biketourTrack Etappe 14": biketourTrack,
-        "Overlay Beschriftung": bmapoverlay,
-        "Shops": preshopsMarker,
-        "Bars und Clubs": barMarker,
-        "Frühstücken":breakfastMarker,
+    "Orthofoto": myLayers.bmaporthofoto30cm,
+    "Overlay Beschriftung": myLayers.bmapoverlay,
+    //"Shops": preshopsMarker,
+    //"Bars und Clubs": barMarker,
+    //"Frühstücken":breakfastMarker,
     }, {
         collapsed: true
     }).addTo(myMap);
@@ -61,6 +61,12 @@ let myMapScale = L.control.scale(
         maxWidth: 200
     }
 ).addTo(myMap);
+
+//Plugin Fullscreen
+myMap.addControl(new L.Control.Fullscreen());
+
+myMap.setView([47.2638846,11.3941364],15);
+
 
 /*
 const SZ_Koordinaten = {
@@ -112,6 +118,5 @@ geojson.bindPopup(function(layer){
 
 //myMap.fitBounds(biketourTrack.getBounds()); 
 
-//Plugin Fullscreen
-myMap.addControl(new L.Control.Fullscreen());
+
 
