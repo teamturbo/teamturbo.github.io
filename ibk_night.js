@@ -84,7 +84,7 @@ myMap.addControl(new L.Control.Fullscreen());
 
 //icons
 const myIconbf = L.icon({
-    iconUrl: '../teamturbo/images/restaurant_breakfast(2).png',
+    iconUrl: 'images/restaurant_breakfast(2).png',
     iconAnchor: [16, 37]
 });
 
