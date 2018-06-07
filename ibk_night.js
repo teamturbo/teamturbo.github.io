@@ -17,7 +17,7 @@ const breakfastMarker = L.featureGroup();//.addTo(myMap);
 const latesnacksMarker = L.featureGroup().addTo(myMap);
 const clustergrp = L.featureGroup().addTo(myMap);
 
-//für Plugin MarkerCluster
+//für Plugin MarkerCluster (1)
 //const preshopsclmarkers = L.markerClusterGroup().addTo(myMap);
 //const barclmarkers = L.markerClusterGroup().addTo(myMap);
 const breakfastclmarkers = L.markerClusterGroup().addTo(clustergrp);
@@ -79,7 +79,7 @@ let myMapScale = L.control.scale(
     }
 ).addTo(myMap);
 
-//Plugin Fullscreen
+//Plugin Fullscreen (2)
 myMap.addControl(new L.Control.Fullscreen());
 
 //Marker definieren, erstellen, Gruppieren und Einbinden
@@ -138,17 +138,18 @@ for (i = 0; i < nightlife_latesnack_ibkDaten.length; i++){
 //Start Ansicht - Zoom
 myMap.setView([47.26,11.39],14);
 
+//Leaflet Hash Plugin (3)
+const hash = new L.Hash(myMap);
 
-
- //Leaflet Search als Control hinzufügen
+/* 
+//Leaflet Search als Control hinzufügen (4)
     myMap.addControl(new L.Control.Search({
         layer: clustergrp,
         propertyName: "titel"
         })
-    );
+    );*/
 
-//Leaflet Hash Plugin
-const hash = new L.Hash(myMap);
+
 
 
 
