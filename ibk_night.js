@@ -13,14 +13,15 @@ let myMap = L.map("map");
 // für MapControl und fitBounds
 const preshopsMarker = L.featureGroup().addTo(myMap);
 const barMarker = L.featureGroup().addTo(myMap);
-const breakfastMarker = L.featureGroup().addTo(myMap);
+const breakfastMarker = L.featureGroup();//.addTo(myMap);
 const latesnacksMarker = L.featureGroup().addTo(myMap);
+const clustergrp = L.featureGroup().addTo(myMap);
 
 //für Plugin MarkerCluster
-/*const preshopsclmarkers = L.markerClusterGroup().addTo(myMap);
-const barclmarkers = L.markerClusterGroup().addTo(myMap);
-const breakfastclmarkers = L.markerClusterGroup().addTo(myMap);
-const latesnacksclmarker = L.featureGroup().addTo(myMap);*/
+//const preshopsclmarkers = L.markerClusterGroup().addTo(myMap);
+//const barclmarkers = L.markerClusterGroup().addTo(myMap);
+const breakfastclmarkers = L.markerClusterGroup().addTo(clustergrp);
+//const latesnacksclmarker = L.featureGroup().addTo(myMap);
 
 //Hintergrundkarten
 let myLayers = {
@@ -62,6 +63,7 @@ let myMapControl = L.control.layers({
     "Bars und Clubs": barMarker,
     "LateNight Snacks": latesnacksMarker,
     "Frühstücken": breakfastMarker,
+    "Alle Marker": clustergrp,
     }, {
         collapsed: true
     }).addTo(myMap);
@@ -105,7 +107,8 @@ const barsmarkerOptions = {
 //Einzelne Marker erstellen und MarkerGruppe zuordnen inkl. Popup
 for (i = 0; i < nightlife_bf_ibkDaten.length; i++){
     const bf = nightlife_bf_ibkDaten[i];
-    L.marker([bf.lat,bf.lng], bfmarkerOptions).addTo(breakfastMarker).bindPopup(`<p><img src=${bf.image} style="width: 75px; height: 75px;"></img> </br> Lokal: ${bf.titel} </br> Adresse: ${bf.adresse} </br> Reservierung: ${bf.telnr} </br> online: <a href='${bf.link}'>${bf.link}</a>  </br> EMail:<a href="${bf.email}">${bf.email}</a> </br> Öffnungszeiten:</br> ${bf.opens} </br></p>`);
+    L.marker([bf.lat,bf.lng], bfmarkerOptions).addTo(breakfastMarker).bindPopup(`<p><img src=${bf.image} style="width: 75px; height: 75px;"></img> </br> Lokal: ${bf.titel} </br> Adresse: ${bf.adresse} </br> Telefon: ${bf.telnr} </br> Online: <a href='${bf.link}'>${bf.link}</a>  </br> EMail:<a href="${bf.email}">${bf.email}</a> </br> Öffnungszeiten:</br> ${bf.opens} </br></p>`);
+    L.marker([bf.lat,bf.lng], bfmarkerOptions).addTo(breakfastclmarkers).bindPopup(`<p><img src=${bf.image} style="width: 75px; height: 75px;"></img> </br> Lokal: ${bf.titel} </br> Adresse: ${bf.adresse} </br> Telefon: ${bf.telnr} </br> Online: <a href='${bf.link}'>${bf.link}</a>  </br> EMail:<a href="${bf.email}">${bf.email}</a> </br> Öffnungszeiten:</br> ${bf.opens} </br></p>`);
 }
 
 for (i = 0; i < nightlife_shops_ibkDaten.length; i++){
@@ -135,6 +138,17 @@ for (i = 0; i < nightlife_latesnack_ibkDaten.length; i++){
 //Start Ansicht - Zoom
 myMap.setView([47.26,11.39],14);
 
+
+
+ //Leaflet Search als Control hinzufügen
+    myMap.addControl(new L.Control.Search({
+        layer: clustergrp,
+        propertyName: "titel"
+        })
+    );
+
+//Leaflet Hash Plugin
+const hash = new L.Hash(myMap);
 
 
 
