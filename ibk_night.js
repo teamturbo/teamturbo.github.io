@@ -4,7 +4,7 @@ let myMap = L.map("map");
 // für MapControl und fitBounds
 const preshopsMarker = L.featureGroup().addTo(myMap);
 const barMarker = L.featureGroup().addTo(myMap);
-const beakfastMarker = L.featureGroup().addTo(myMap);
+const breakfastMarker = L.featureGroup().addTo(myMap);
 
 //für Plugin MarkerCluster
 const preshopsclmarkers = L.markerClusterGroup().addTo(myMap);
@@ -46,12 +46,10 @@ let myMapControl = L.control.layers({
     "BaseMap.at": myLayers.geolandbasemap,
     "Orthofoto": myLayers.bmaporthofoto30cm,
 }, {
-        //"biketourTrack Etappe 14": biketourTrack,
-    "Orthofoto": myLayers.bmaporthofoto30cm,
     "Overlay Beschriftung": myLayers.bmapoverlay,
     //"Shops": preshopsMarker,
     //"Bars und Clubs": barMarker,
-    //"Frühstücken":breakfastMarker,
+    "Frühstücken":breakfastMarker,
     }, {
         collapsed: true
     }).addTo(myMap);
@@ -70,7 +68,29 @@ let myMapScale = L.control.scale(
 //Plugin Fullscreen
 myMap.addControl(new L.Control.Fullscreen());
 
-myMap.setView([47.2638846,11.3941364],15);
+//myMap.setView([47.2638846,11.3941364],15);
+
+//Marker definieren, erstellen, Gruppieren und Einbinden
+const markerOptions = {
+    title: "Frühstücken",
+    //draggable: true,
+    opacity: 0.95
+}
+
+//Kurze Version mit for Schleife
+for (i = 0; i < nightlife_bf_ibkDaten.length; i++){
+const bf = nightlife_bf_ibkDaten[i];
+
+L.marker([bf.lat,bf.lng], markerOptions).addTo(breakfastMarker).bindPopup(`<p>Lokal: ${bf.titel} </br> Adresse: ${bf.info} </br> Reservierung: ${bf.attribute1} </br> </p>`);
+
+}
+
+//Marker Gruppe zur Karte hinzu 
+//Start Ansicht - Zoom
+myMap.fitBounds(breakfastMarker.getBounds()); 
+
+
+
 
 
 /*
@@ -104,16 +124,15 @@ const markerOptionZiel = {
     icon: myIconZiel
 }; */
 
-/* PopUps
-L.marker(SZ_Koordinaten.start, markerOptionStart).bindPopup("<p>Start: Westendorf</p><a href='https://de.wikipedia.org/wiki/Westendorf_(Tirol)'>Westendorf</a>").addTo(biketourMarker);
-L.marker(SZ_Koordinaten.ziel, markerOptionZiel).bindPopup("<p>Ziel: Alpbach</p><a href='https://de.wikipedia.org/wiki/Alpbach'>Alpach</a>").addTo(biketourMarker);
-*/
+
 
 
 // Daten über lokales geojson wird eingebunden 
-
-//const geojson = L.geoJSON(biketourTrackdata).addTo(biketourTrack);
 /*
+const shopgeojson = L.geoJSON(nightlife_shops_ibkDaten).addTo(preshopsMarker);
+const bargeojson = L.geoJSON(nightlife_bars_ibkDaten).addTo(barMarker);
+const breakfastgeojson = L.geoJSON(nightlife_bf_ibkDaten).addTo(breakfastMarker);
+
 geojson.bindPopup(function(layer){
     const props = layer.feature.properties;
     const popupText = `<h2>${props.name}</h2>
@@ -121,7 +140,4 @@ geojson.bindPopup(function(layer){
     return popupText;
 });*/
 
-//myMap.fitBounds(biketourTrack.getBounds()); 
-
-
-
+//myMap.fitBounds(beakfastMarker.getBounds()); 
