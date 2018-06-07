@@ -12,6 +12,19 @@ Datenobjekt für Nightlife Innbruck JSON Beispiel
         lng : "";
     },
 
+    Version lang
+        {
+        titel : "",
+        adresse : "",
+        link : "",
+        telnr : "",
+        email : "",
+        opens : "",
+        image : "",
+        lat : "",
+        lng : "";
+    },
+
 */
 
 const nightlife_bf_ibkDaten = [{
@@ -31,6 +44,18 @@ const nightlife_bf_ibkDaten = [{
         lat: 47.2638761,
         lng: 11.3949641,
     },  
+    {
+        titel: "Bare Foot Coffee",
+        adresse: "Egger-Lienz-Straße 118",
+        link: "https://www.barefootcoffee.at/",
+        telnr: "+43 512 319193",
+        email: "office@barefootcoffee.at",
+        opens: `Mo. – Sa. 7:30 – 2:00 Uhr, 
+        So & Feiertage: 9:00 – 13:00 Uhr (Brunch Boulevard) und ab 13:00 Uhr durchgehend`,
+        image: "https://media-cdn.tripadvisor.com/media/photo-s/08/2d/20/d9/barefoot-coffee-bar-soulkitche.jpg",
+        lat: 47.2555365,
+        lng: 11.3801291,
+    },
 ];
 
 const nightlife_shops_ibkDaten = [{

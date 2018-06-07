@@ -14,11 +14,13 @@ let myMap = L.map("map");
 const preshopsMarker = L.featureGroup().addTo(myMap);
 const barMarker = L.featureGroup().addTo(myMap);
 const breakfastMarker = L.featureGroup().addTo(myMap);
+const latesnacksMarker = L.featureGroup().addTo(myMap);
 
 //für Plugin MarkerCluster
-const preshopsclmarkers = L.markerClusterGroup().addTo(myMap);
+/*const preshopsclmarkers = L.markerClusterGroup().addTo(myMap);
 const barclmarkers = L.markerClusterGroup().addTo(myMap);
 const breakfastclmarkers = L.markerClusterGroup().addTo(myMap);
+const latesnacksclmarker = L.featureGroup().addTo(myMap);*/
 
 //Hintergrundkarten
 let myLayers = {
@@ -56,9 +58,10 @@ let myMapControl = L.control.layers({
     "Orthofoto": myLayers.bmaporthofoto30cm,
 }, {
     "Overlay Beschriftung": myLayers.bmapoverlay,
-    //"Shops": preshopsMarker,
-    //"Bars und Clubs": barMarker,
-    "Frühstücken":breakfastMarker,
+    "Shops": preshopsMarker,
+    "Bars und Clubs": barMarker,
+    "LateNight Snacks": latesnacksMarker,
+    "Frühstücken": breakfastMarker,
     }, {
         collapsed: true
     }).addTo(myMap);
@@ -77,27 +80,56 @@ let myMapScale = L.control.scale(
 //Plugin Fullscreen
 myMap.addControl(new L.Control.Fullscreen());
 
-//myMap.setView([47.2638846,11.3941364],15);
-
 //Marker definieren, erstellen, Gruppieren und Einbinden
-const markerOptions = {
+const bfmarkerOptions = {
     title: "Frühstücken",
+    //draggable: true,
+    opacity: 0.95
+}
+const shopsmarkerOptions = {
+    title: "PreShops",
+    //draggable: true,
+    opacity: 0.95
+}
+const lsmarkerOptions = {
+    title: "Latenight Snacks",
+    //draggable: true,
+    opacity: 0.95
+}
+const barsmarkerOptions = {
+    title: "Bars und Clubs",
     //draggable: true,
     opacity: 0.95
 }
 
 //Kurze Version mit for Schleife
 for (i = 0; i < nightlife_bf_ibkDaten.length; i++){
-const bf = nightlife_bf_ibkDaten[i];
+    const bf = nightlife_bf_ibkDaten[i];
 
-L.marker([bf.lat,bf.lng], markerOptions).addTo(breakfastMarker).bindPopup(`<p><img src=${bf.image}></img> </br> Lokal: ${bf.titel} </br> Adresse: ${bf.adresse} </br> Reservierung: ${bf.telnr} </br> online: <a href='${bf.link}'>${bf.link}</a>  </br> EMail:<a href="${bf.email}">${bf.email}</a> </br> Öffnungszeiten:</br> ${bf.opens} </br></p>`);
-
+    L.marker([bf.lat,bf.lng], bfmarkerOptions).addTo(breakfastMarker).bindPopup(`<p><img src=${bf.image}></img> </br> Lokal: ${bf.titel} </br> Adresse: ${bf.adresse} </br> Reservierung: ${bf.telnr} </br> online: <a href='${bf.link}'>${bf.link}</a>  </br> EMail:<a href="${bf.email}">${bf.email}</a> </br> Öffnungszeiten:</br> ${bf.opens} </br></p>`);
+    console.log(bf.titel);
 }
 
-//Marker Gruppe zur Karte hinzu 
-//Start Ansicht - Zoom
-myMap.fitBounds(breakfastMarker.getBounds()); 
+for (i = 0; i < nightlife_shops_ibkDaten.length; i++){
+    const shops = nightlife_shops_ibkDaten[i];
+    
+    //L.marker([shops.lat,shops.lng], shopsmarkerOptions).addTo(preshopsMarker).bindPopup(`<p><img src=${shops.image}></img> </br> Lokal: ${shops.titel} </br> Adresse: ${shops.adresse} </br> Reservierung: ${shops.telnr} </br> online: <a href='${shops.link}'>${shops.link}</a>  </br> EMail:<a href="${shops.email}">${shops.email}</a> </br> Öffnungszeiten:</br> ${shops.opens} </br></p>`);
+    L.marker([shops.lat,shops.lng], shopsmarkerOptions).addTo(preshopsMarker).bindPopup(`<p> Lokal: ${shops.titel} </br> Adresse: ${shops.info} </br> Telefon: ${shops.attribute1} </br> online: <a href='${shops.metadaten}'>${shops.metadaten}</a>  </br> EMail:<a href="${shops.attribute2}">${shops.attribute2}</a> </br> Öffnungszeiten:</br> ${shops.attribute3} </br></p>`);
 
+    console.log(shops.titel);
+}
+
+for (i = 0; i < nightlife_latesnack_ibkDaten.length; i++){
+    const ls = nightlife_latesnack_ibkDaten[i];
+        
+    L.marker([ls.lat,ls.lng], lsmarkerOptions).addTo(latesnacksMarker).bindPopup(`<p> Lokal: ${ls.titel} </br> Adresse: ${ls.info} </br> Telefon: ${ls.attribute1} </br> online: <a href='${ls.metadaten}'>${ls.metadaten}</a>  </br> EMail:<a href="${ls.attribute2}">${ls.attribute2}</a> </br> Öffnungszeiten:</br> ${ls.attribute3} </br></p>`);
+    console.log(ls.titel);   
+ }
+
+//Start auf MarkerGruppe
+//myMap.fitBounds(breakfastMarker.getBounds()); 
+//Start Ansicht - Zoom
+myMap.setView([47.2638846,11.3941364],14);
 
 
 
@@ -132,21 +164,3 @@ const markerOptionZiel = {
     opacity: 0.90,
     icon: myIconZiel
 }; */
-
-
-
-
-// Daten über lokales geojson wird eingebunden 
-/*
-const shopgeojson = L.geoJSON(nightlife_shops_ibkDaten).addTo(preshopsMarker);
-const bargeojson = L.geoJSON(nightlife_bars_ibkDaten).addTo(barMarker);
-const breakfastgeojson = L.geoJSON(nightlife_bf_ibkDaten).addTo(breakfastMarker);
-
-geojson.bindPopup(function(layer){
-    const props = layer.feature.properties;
-    const popupText = `<h2>${props.name}</h2>
-    <p>Westendorf - Alpbach</p>`;
-    return popupText;
-});*/
-
-//myMap.fitBounds(beakfastMarker.getBounds()); 
