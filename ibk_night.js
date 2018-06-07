@@ -90,7 +90,7 @@ const markerOptions = {
 for (i = 0; i < nightlife_bf_ibkDaten.length; i++){
 const bf = nightlife_bf_ibkDaten[i];
 
-L.marker([bf.lat,bf.lng], markerOptions).addTo(breakfastMarker).bindPopup(`<p>Lokal: ${bf.titel} </br> Adresse: ${bf.info} </br> Reservierung: ${bf.attribute1} </br> </p>`);
+L.marker([bf.lat,bf.lng], markerOptions).addTo(breakfastMarker).bindPopup(`<p><img src=${bf.image}></img> </br> Lokal: ${bf.titel} </br> Adresse: ${bf.adresse} </br> Reservierung: ${bf.telnr} </br> online: <a href='${bf.link}'>${bf.link}</a>  </br> EMail:<a href="${bf.email}">${bf.email}</a> </br> Öffnungszeiten:</br> ${bf.opens} </br></p>`);
 
 }
 
