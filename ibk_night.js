@@ -82,11 +82,18 @@ let myMapScale = L.control.scale(
 //Plugin Fullscreen (2)
 myMap.addControl(new L.Control.Fullscreen());
 
+//icons
+const myIconbf = L.icon({
+    iconUrl: '../teamturbo/images/restaurant_breakfast(2).png',
+    iconAnchor: [16, 37]
+});
+
 //Marker definieren, erstellen, Gruppieren und Einbinden
 const bfmarkerOptions = {
     title: "Frühstücken",
     //draggable: true,
-    opacity: 0.95
+    opacity: 0.95,
+    icon: myIconbf,
 }
 const shopsmarkerOptions = {
     title: "PreShops",
@@ -103,6 +110,8 @@ const barsmarkerOptions = {
     //draggable: true,
     opacity: 0.95
 }
+
+
 
 //Einzelne Marker erstellen und MarkerGruppe zuordnen inkl. Popup
 for (i = 0; i < nightlife_bf_ibkDaten.length; i++){
