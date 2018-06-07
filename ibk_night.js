@@ -102,12 +102,10 @@ const barsmarkerOptions = {
     opacity: 0.95
 }
 
-//Kurze Version mit for Schleife
+//Einzelne Marker erstellen und MarkerGruppe zuordnen inkl. Popup
 for (i = 0; i < nightlife_bf_ibkDaten.length; i++){
     const bf = nightlife_bf_ibkDaten[i];
-
-    L.marker([bf.lat,bf.lng], bfmarkerOptions).addTo(breakfastMarker).bindPopup(`<p><img src=${bf.image}></img> </br> Lokal: ${bf.titel} </br> Adresse: ${bf.adresse} </br> Reservierung: ${bf.telnr} </br> online: <a href='${bf.link}'>${bf.link}</a>  </br> EMail:<a href="${bf.email}">${bf.email}</a> </br> Öffnungszeiten:</br> ${bf.opens} </br></p>`);
-    console.log(bf.titel);
+    L.marker([bf.lat,bf.lng], bfmarkerOptions).addTo(breakfastMarker).bindPopup(`<p><img src=${bf.image} style="width: 75px; height: 75px;"></img> </br> Lokal: ${bf.titel} </br> Adresse: ${bf.adresse} </br> Reservierung: ${bf.telnr} </br> online: <a href='${bf.link}'>${bf.link}</a>  </br> EMail:<a href="${bf.email}">${bf.email}</a> </br> Öffnungszeiten:</br> ${bf.opens} </br></p>`);
 }
 
 for (i = 0; i < nightlife_shops_ibkDaten.length; i++){
@@ -116,20 +114,26 @@ for (i = 0; i < nightlife_shops_ibkDaten.length; i++){
     //L.marker([shops.lat,shops.lng], shopsmarkerOptions).addTo(preshopsMarker).bindPopup(`<p><img src=${shops.image}></img> </br> Lokal: ${shops.titel} </br> Adresse: ${shops.adresse} </br> Reservierung: ${shops.telnr} </br> online: <a href='${shops.link}'>${shops.link}</a>  </br> EMail:<a href="${shops.email}">${shops.email}</a> </br> Öffnungszeiten:</br> ${shops.opens} </br></p>`);
     L.marker([shops.lat,shops.lng], shopsmarkerOptions).addTo(preshopsMarker).bindPopup(`<p> Lokal: ${shops.titel} </br> Adresse: ${shops.info} </br> Telefon: ${shops.attribute1} </br> online: <a href='${shops.metadaten}'>${shops.metadaten}</a>  </br> EMail:<a href="${shops.attribute2}">${shops.attribute2}</a> </br> Öffnungszeiten:</br> ${shops.attribute3} </br></p>`);
 
-    console.log(shops.titel);
 }
 
 for (i = 0; i < nightlife_latesnack_ibkDaten.length; i++){
     const ls = nightlife_latesnack_ibkDaten[i];
         
     L.marker([ls.lat,ls.lng], lsmarkerOptions).addTo(latesnacksMarker).bindPopup(`<p> Lokal: ${ls.titel} </br> Adresse: ${ls.info} </br> Telefon: ${ls.attribute1} </br> online: <a href='${ls.metadaten}'>${ls.metadaten}</a>  </br> EMail:<a href="${ls.attribute2}">${ls.attribute2}</a> </br> Öffnungszeiten:</br> ${ls.attribute3} </br></p>`);
-    console.log(ls.titel);   
+    /*console.log(ls.lat);
+    console.log(ls.lng);
+    console.log(ls.titel);
+    console.log(ls.info);
+    console.log(ls.metadaten);
+    console.log(ls.attribute1);
+    console.log(ls.attribute2);
+    console.log(ls.attribute3);*/
  }
 
 //Start auf MarkerGruppe
 //myMap.fitBounds(breakfastMarker.getBounds()); 
 //Start Ansicht - Zoom
-myMap.setView([47.2638846,11.3941364],14);
+myMap.setView([47.26,11.39],14);
 
 
 
