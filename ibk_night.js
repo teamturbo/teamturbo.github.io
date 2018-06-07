@@ -3,7 +3,7 @@
 Ideen:
  * EventOn Funktion bei Control fitbound auf Overlay legen ?
  * Auswahlliste mit den jeweiligen Bars, Shops und Breakfasts?
- * Suchen Plugin als 3. Plugin einbinden?
+ * Suchen Plugin als 4. Plugin einbinden?
 
  */
 
@@ -88,7 +88,7 @@ const myIconbf = L.icon({
     iconAnchor: [16, 37]
 });
 
-//Marker definieren, erstellen, Gruppieren und Einbinden
+//Einstellungen für die Darstellung der Marker inkl. Icon
 const bfmarkerOptions = {
     title: "Frühstücken",
     //draggable: true,
@@ -111,8 +111,6 @@ const barsmarkerOptions = {
     opacity: 0.95
 }
 
-
-
 //Einzelne Marker erstellen und MarkerGruppe zuordnen inkl. Popup
 for (i = 0; i < nightlife_bf_ibkDaten.length; i++){
     const bf = nightlife_bf_ibkDaten[i];
@@ -120,6 +118,7 @@ for (i = 0; i < nightlife_bf_ibkDaten.length; i++){
     L.marker([bf.lat,bf.lng], bfmarkerOptions).addTo(breakfastclmarkers).bindPopup(`<p><img src=${bf.image} style="width: 75px; height: 75px;"></img> </br> Lokal: ${bf.titel} </br> Adresse: ${bf.adresse} </br> Telefon: ${bf.telnr} </br> Online: <a href='${bf.link}'>${bf.link}</a>  </br> EMail:<a href="${bf.email}">${bf.email}</a> </br> Öffnungszeiten:</br> ${bf.opens} </br></p>`);
 }
 
+//Funktioniert noch nicht, keine ahnung warum??!!
 for (i = 0; i < nightlife_shops_ibkDaten.length; i++){
     const shops = nightlife_shops_ibkDaten[i];
     
@@ -127,7 +126,7 @@ for (i = 0; i < nightlife_shops_ibkDaten.length; i++){
     L.marker([shops.lat,shops.lng], shopsmarkerOptions).addTo(preshopsMarker).bindPopup(`<p> Lokal: ${shops.titel} </br> Adresse: ${shops.info} </br> Telefon: ${shops.attribute1} </br> online: <a href='${shops.metadaten}'>${shops.metadaten}</a>  </br> EMail:<a href="${shops.attribute2}">${shops.attribute2}</a> </br> Öffnungszeiten:</br> ${shops.attribute3} </br></p>`);
 
 }
-
+//Funktioniert noch nicht, keine ahnung warum??!!
 for (i = 0; i < nightlife_latesnack_ibkDaten.length; i++){
     const ls = nightlife_latesnack_ibkDaten[i];
         
@@ -142,8 +141,6 @@ for (i = 0; i < nightlife_latesnack_ibkDaten.length; i++){
     console.log(ls.attribute3);*/
  }
 
-//Start auf MarkerGruppe
-//myMap.fitBounds(breakfastMarker.getBounds()); 
 //Start Ansicht - Zoom
 myMap.setView([47.26,11.39],14);
 
@@ -158,37 +155,7 @@ const hash = new L.Hash(myMap);
         })
     );*/
 
+//Start auf MarkerGruppe
+//myMap.fitBounds(breakfastMarker.getBounds()); 
 
-
-
-
-/*
-const SZ_Koordinaten = {
-    start : [47.431846, 12.214388],
-    ziel : [47.39918, 11.943173],
-};*/
-
-/* Icons erstellen, wenn nötig
-const myIconStart = L.icon({
-    iconUrl: 'images/cycling.png',
-    iconAnchor: [16, 37]
-});
-
-const myIconZiel = L.icon({
-    iconUrl: 'images/finish2.png',
-    iconAnchor: [16, 37]
-});
-
-const markerOptionStart = {
-    title: "Westendorf",
-    draggable: false,
-    opacity: 0.90,
-    icon: myIconStart
-};
-
-const markerOptionZiel = {
-    title: "Innsbrucker Umland",
-    draggable: false,
-    opacity: 0.90,
-    icon: myIconZiel
-}; */
+//ENDE
