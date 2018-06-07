@@ -1,10 +1,15 @@
 //Karte einbinden
 let myMap = L.map("map");
 
-// für fitBounds
+// für MapControl und fitBounds
 const preshopsMarker = L.featureGroup().addTo(myMap);
 const barMarker = L.featureGroup().addTo(myMap);
 const beakfastMarker = L.featureGroup().addTo(myMap);
+
+//für Plugin MarkerCluster
+const preshopsclmarkers = L.markerClusterGroup().addTo(myMap);
+const barclmarkers = L.markerClusterGroup().addTo(myMap);
+const breakfastclmarkers = L.markerClusterGroup().addTo(myMap);
 
 //Hintergrundkarten
 let myLayers = {
