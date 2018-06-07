@@ -1,3 +1,12 @@
+/*
+
+Ideen:
+ * EventOn Funktion bei Control fitbound auf Overlay legen ?
+ * Auswahlliste mit den jeweiligen Bars, Shops und Breakfasts?
+ * Suchen Plugin als 3. Plugin einbinden?
+
+ */
+
 //Karte einbinden
 let myMap = L.map("map");
 
