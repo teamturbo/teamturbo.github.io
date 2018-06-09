@@ -16,7 +16,7 @@ const barMarker = L.featureGroup();//.addTo(myMap);
 const clubMarker = L.featureGroup();//.addTo(myMap);
 const breakfastMarker = L.featureGroup();//.addTo(myMap);
 const latesnacksMarker = L.featureGroup();//.addTo(myMap);
-//CLuster Marker für Plugin
+//Cluster Marker für Plugin
 const clustergrp = L.featureGroup().addTo(myMap);
 
 //für Plugin MarkerCluster (1)
@@ -89,26 +89,26 @@ myMap.addControl(new L.Control.Fullscreen());
 //icons
 //Breakfast
 const myIconbf = L.icon({
-    iconUrl: 'images/restaurant_breakfast(2).png',
+    iconUrl: 'images/icons/restaurant_breakfast(2).png',
     iconAnchor: [16, 37]
 });
 //PreShops
 const myIconps = L.icon({
-    iconUrl: 'images/star-3.png',
+    iconUrl: 'images/icons/star-3.png',
     iconAnchor: [16, 37]
 });
 //Bars und Clubs
 const myIconbar = L.icon({
-    iconUrl: 'images/bar.png',
+    iconUrl: 'images/icons/bar.png',
     iconAnchor: [16, 37]
 });
 const myIconclub = L.icon({
-    iconUrl: 'images/bar_coktail.png',
+    iconUrl: 'images/icons/bar_coktail.png',
     iconAnchor: [16, 37]
 });
 //Latenight Snacks
 const myIconls = L.icon({
-    iconUrl: 'images/fastfood(2).png',
+    iconUrl: 'images/icons/fastfood(2).png',
     iconAnchor: [16, 37]
 });
 
