@@ -152,13 +152,13 @@ for (i = 0; i < nightlife_bf_ibkDaten.length; i++){
 for (i = 0; i < nightlife_bars_ibkDaten.length; i++){
     const bar = nightlife_bars_ibkDaten[i];
     L.marker([bar.lat,bar.lng], barsmarkerOptions ).addTo(barMarker).bindPopup(`<p><img src=${bar.image} style="width: 75px; height: 75px;"></img> </br> Lokal: ${bar.titel} </br> Adresse: ${bar.adresse} </br> Telefon: ${bar.telnr} </br> Online: <a href='${bar.link}'>${bar.link}</a>  </br> EMail:<a href="${bar.email}">${bar.email}</a> </br> Öffnungszeiten:</br> ${bar.opens} </br></p>`);
-    L.marker([bar.lat,bar.lng], barsmarkerOptions).addTo(barmarkers).bindPopup(`<p><img src=${bar.image} style="width: 75px; height: 75px;"></img> </br> Lokal: ${bar.titel} </br> Adresse: ${bar.adresse} </br> Telefon: ${bar.telnr} </br> Online: <a href='${bar.link}'>${bar.link}</a>  </br> EMail:<a href="${bar.email}">${bar.email}</a> </br> Öffnungszeiten:</br> ${bar.opens} </br></p>`);
+    L.marker([bar.lat,bar.lng], barsmarkerOptions).addTo(barclmarkers).bindPopup(`<p><img src=${bar.image} style="width: 75px; height: 75px;"></img> </br> Lokal: ${bar.titel} </br> Adresse: ${bar.adresse} </br> Telefon: ${bar.telnr} </br> Online: <a href='${bar.link}'>${bar.link}</a>  </br> EMail:<a href="${bar.email}">${bar.email}</a> </br> Öffnungszeiten:</br> ${bar.opens} </br></p>`);
 }
 
 for (i = 0; i < nightlife_clubs_ibkDaten.length; i++){
     const cl = nightlife_clubs_ibkDaten[i];
     L.marker([cl.lat,cl.lng], clubsmarkerOptions ).addTo(clubMarker).bindPopup(`<p><img src=${cl.image} style="width: 75px; height: 75px;"></img> </br> Lokal: ${cl.titel} </br> Adresse: ${cl.adresse} </br> Telefon: ${cl.telnr} </br> Online: <a href='${cl.link}'>${cl.link}</a>  </br> EMail:<a href="${cl.email}">${cl.email}</a> </br> Öffnungszeiten:</br> ${cl.opens} </br></p>`);
-    L.marker([cl.lat,cl.lng], clubsmarkerOptions).addTo(clubmarkers).bindPopup(`<p><img src=${cl.image} style="width: 75px; height: 75px;"></img> </br> Lokal: ${cl.titel} </br> Adresse: ${cl.adresse} </br> Telefon: ${cl.telnr} </br> Online: <a href='${cl.link}'>${cl.link}</a>  </br> EMail:<a href="${cl.email}">${cl.email}</a> </br> Öffnungszeiten:</br> ${cl.opens} </br></p>`);
+    L.marker([cl.lat,cl.lng], clubsmarkerOptions).addTo(clubclmarkers).bindPopup(`<p><img src=${cl.image} style="width: 75px; height: 75px;"></img> </br> Lokal: ${cl.titel} </br> Adresse: ${cl.adresse} </br> Telefon: ${cl.telnr} </br> Online: <a href='${cl.link}'>${cl.link}</a>  </br> EMail:<a href="${cl.email}">${cl.email}</a> </br> Öffnungszeiten:</br> ${cl.opens} </br></p>`);
 }
 //marker Pre Shops
 for (i = 0; i < nightlife_shops_ibkDaten.length; i++){
