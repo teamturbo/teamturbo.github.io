@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Night Life Guide Innsbruck - Breakfast</title>
+    <title>Night Life Guide Innsbruck</title>
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <!--CSS Stylesheet Vorlagen-->
-    <link rel="stylesheet" href="../js/leaflet/leaflet.css" />
-    <link rel="stylesheet" href="../js/leaflet.fullscreen/leaflet.fullscreen.css"/>
+    <link rel="stylesheet" href="js/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="js/leaflet.fullscreen/leaflet.fullscreen.css"/>
+    <link rel="stylesheet" href="js/leaflet.markercluster/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="js/leaflet.search/leaflet-search.min.css"/>
+    <link rel="stylesheet" href="js/leaflet.search/leaflet-search.mobile.min.css"/>
     <!--JavaScript Files einbinden Vorlagen-->
-    <script src="../js/leaflet/leaflet.js"></script>
-    <script  src="../js/leaflet.fullscreen/Leaflet.fullscreen.min.js"></script>
+    <script src="js/leaflet/leaflet.js"></script>
+    <script  src="js/leaflet.fullscreen/Leaflet.fullscreen.min.js"></script>
+    <script  src="js/leaflet.markercluster/leaflet.markercluster.js"></script>
+    <script  src="js/leaflet.hash/leaflet-hash.js"></script>
+    <script  src=".js/leaflet.search/leaflet-search.min.js"></script>
     <!--Eigene Files einbinden-->
     <link rel="stylesheet" href="styles.css" />
     <script defer src="ibk_night.js"></script>
@@ -21,15 +27,15 @@
 </head>
 
 <body>
-    <div id="header">
-        <h2 class="white">Night Life Guide Innsbruck</h2>
-        <h3 class="white">Prost - Zum Wohl - Viel Spaß!</h3>
+    <div id="headerbf">
+        <h2 class="white">Der Tag danach -</h2>
+        <h3 class="white">Katerfrühstücken in Innsbruck</h3>
     </div>
 
-    <div class="author">
-        <img src="images/user.jpg" alt="Ihr Reiseleiter" />
+    <div class="authorbf">
+        <img src="images/user_wk.jpg" alt="Guide" />
         <p class="gray">
-            <a href="mailto:werner.klaus@student.uibk.ac.at">TeamTurbo</a>
+            <a href="mailto:werner.klaus@student.uibk.ac.at">Werner Klaus</a>
             <a href="https://klauswerner.github.io/biketirol/index.html">https://TeamTurbo.github.io/</a>
         </p>
     </div>
@@ -38,31 +44,75 @@
 
     
     <div class="article">
-        <h1>Überschrift</h1>
+        <h1>Frühstücken in Innsbruck</h1>
 
-        <p>Beispieltext
+        <p> Nach einer langen Nacht in Innsbruck kann ein gutes und reichhaltiges Frühstück
+            einen guten Start in den Tag ermöglichen. Deshalb geht es in diesem Bereich rund um 
+            die wichtigste Mahlzeit des Tages. <br />
+            Zu dieser Auswahl bin ich über eigene Erfahrungen, Gespräche mit meinen Freunden und Kollegen
+            gekommen, sowie über eine kurze Internet Recherche und dem Fundus in diversen Food Blogs, wie 
+            in denen unter den weitern Links. <br/>
+            Neben vielen guten Restaurants, welche Frühstück anbieten, und auch kleineren Lokalen, die sich komplett 
+            auf ein umfangreiches Frühstücks-Angebot spezialisiert haben, sind auch die klassischen Bäcker immer 
+            einen Besuch wert. 
         </p>
+<br/>
+        <p align=center>
+            <em><b>Ein guter Kaffee muss schwarz wie die Nacht, <br/>
+                heiß wie die Liebe und <br/>
+                so süß oder bitter wie das Leben sein.</b></em>
+        </p>
+<br/>
+        <p>Zurück zur <a href="index.html">Karte</a> </p>
 
-        <div id="map" style="width:1200px;height:600px;"></div>
-
-        <h2>Zwischenüberschrift</h2>
-        <p>Beispieltext.</p>
-
-        <h3>Links</h3>
+        <h3>Links zu den einzelnen Lokalen:</h3>
         <ul>
-            <li><a href="https://www.google.com">Link1</a></li>
+            <li><a href="https://www.breakfast-club.at/">BreakfastClub</a></li>
+            <li><a href="https://www.barefootcoffee.at/">Bare Foot Coffee</a></li>
+            <li><a href="http://www.ludwig-burger.at/innsbruck/burger.html">LUDWIG Das Burger Restaurant</a></li>
+            <li><a href="http://www.immerimmerland.at/">Immerland</a></li>
+            <li><a href="https://www.ruetz.at/baeckereien/standorte/hauptbahnhof_innsbruck_tirol">BÄCKEREI-CAFÉ Ruetz</a></li>
+            <li><a href="http://www.munding.at/">Munding</a></li>
+            <li><a href="http://thecafe.londonstaste.com/">Londons Taste - The Cafe</a></li>
+            <li><a href="https://www.adlers-innsbruck.com/en/restaurantbar/breakfast-and-brunch.html">Adlers Hotel</a></li>
         </ul>
+
+        <h3>Weitere Links:</h3>
+        <ul>
+            <li><a href="https://www.blog.tirol/2014/01/fruehstueck-die-schoenste-aller-mahlzeiten/">Frühstück Blog Innsbruck</a></li>
+            <li><a href="https://www.diefruehstueckerinnen.at/stadt/innsbruck/">Die Frühstückerinnen - Blog</a></li>
+            <li><a href="https://www.tripadvisor.at/Restaurants-g190445-zfp2-Innsbruck_Tirol_Austrian_Alps.html">Tripadvisor</a></li>
+        </ul>
+
+        <h3>Artikel zur des Frühstücks in den verschiedenen Kulturen aus <a href="https://de.wikipedia.org/wiki/Fr%C3%BChst%C3%BCck">Wikipedia:</a></h3>
+        <p> Während das Frühstück als erste, morgendliche Mahlzeit ein kulturübergreifendes Phänomen ist, 
+            unterscheiden sich Gestaltung, Rituale, Zeitpunkt, Dauer, vor allem aber Umfang und Nahrungsbestandteile 
+            des Frühstücks zwischen und in den verschiedenen Kulturkreisen oft erheblich. <br/>
+
+            In afrikanischen und asiatischen Kulturen ist ein süßes Frühstück weitgehend unbekannt. 
+            In Nord- und Zentraleuropa, insbesondere in Großbritannien, gilt das Frühstück häufig als wichtigste, 
+            zentrale Mahlzeit des Tages und als äußerer Rahmen der Begegnung mit der ganzen Familie oder 
+            häuslichen Gemeinschaft. Dessen ungeachtet verzichten heutzutage viele Menschen in Europa und den USA 
+            auf das Frühstück: Je nach Alters- und Bevölkerungsgruppe bzw. Definition von „Frühstück“ beläuft sich 
+            der prozentuale Anteil der „Frühstücksverzichter“ auf 10 % bis 30 %.
+        </p>
+        <!--
+        <div id="map" style="width:900px;height:600px;"></div>
+        -->
+
     </div>
 
+  
+
     <hr />
-<!--
+
     <div id="footer" class="gray">
-        <a class="back" href="https://sagamol.github.io/biketirol/index.html">
-            <i class="fas fa-arrow-alt-circle-left"></i> vorhergehender Stop</a>
-        <a class="next" href="https://hannesklaus1.github.io/biketirol/index.html">nächster Stop
+        <a class="back" href="shops.html">
+            <i class="fas fa-arrow-alt-circle-left"></i>Drinks und Essen</a>
+        <a class="next" href="bars.html">Bars und Clubs
             <i class="fas fa-arrow-alt-circle-right"></i>
         </a>
-    </div> -->
+    </div> 
 
 </body>
 </html>
