@@ -293,8 +293,8 @@ const nightlife_clubs_ibkDaten= [{
         opens: `Mi: 23:00 - 05:00 Uhr,
                 Fr-Sa: 23:00 - 06:00 Uhr`,
         image: "project.jpg",
-        lat: 47.2683214,
-        lng: 11.4002017,
+        lat: 47.2684046,
+        lng: 11.4020554,
     },
     {
         titel: "Tante Emma Club",
@@ -317,8 +317,8 @@ const nightlife_clubs_ibkDaten= [{
         opens: `Di: 23:00 - 06:00 Uhr,
                 Fr - Sa: 23:00 - 07:00 Uhr`,
         image: "dachs.jpg",
-        lat: 47.2693017,
-        lng: 11.3904583,
+        lat: 47.2691799,
+        lng: 11.3918952,
     }, 
     {
         titel: "felix",
@@ -330,8 +330,8 @@ const nightlife_clubs_ibkDaten= [{
                 Do: 18:00 - 04:00 Uhr,
                 Fr - Sa: 20:00 - 05:00 Uhr`,
         image: "felix.jpg",
-        lat: 47.2719949,
-        lng: 11.3832109,
+        lat: 47.265871,
+        lng: 11.398979,
     },
 
 ];
