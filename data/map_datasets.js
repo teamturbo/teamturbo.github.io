@@ -190,7 +190,7 @@ const nightlife_shops_ibkDaten = [{
     },
 ];
 
-//--------------- BARS UND CLUBS ------------------------------
+//--------------- BARS ------------------------------
 const nightlife_bars_ibkDaten = [{
         titel: "John Montagu",
         adresse: "Höttinger Gasse 7",
@@ -263,6 +263,7 @@ const nightlife_bars_ibkDaten = [{
         },            
 ];
 
+//--------------- CLUBS ------------------------------
 const nightlife_clubs_ibkDaten= [{
         titel: "Abyss",
         adresse: "Amraser-See-Str. 5",
@@ -294,9 +295,9 @@ const nightlife_clubs_ibkDaten= [{
         email: "contact@project-innsbruck.at",
         opens: `Mi: 23:00 - 05:00 Uhr,
                 Fr-Sa: 23:00 - 06:00 Uhr`,
-        image: "images/project.jpg",
-        lat: 47.2683214,
-        lng: 11.4002017,
+        image: "project.jpg",
+        lat: 47.2684046,
+        lng: 11.4020554,
     },
     {
         titel: "Tante Emma Club",
@@ -318,9 +319,9 @@ const nightlife_clubs_ibkDaten= [{
         email: "garderobe@hohesleben.at",
         opens: `Di: 23:00 - 06:00 Uhr,
                 Fr - Sa: 23:00 - 07:00 Uhr`,
-        image: "images/dachs.jpg",
-        lat: 47.2693017,
-        lng: 11.3904583,
+        image: "dachs.jpg",
+        lat: 47.2691799,
+        lng: 11.3918952,
     }, 
     {
         titel: "felix",
@@ -331,9 +332,9 @@ const nightlife_clubs_ibkDaten= [{
         opens: `Mo: 20:00 - 04:00 Uhr,
                 Do: 18:00 - 04:00 Uhr,
                 Fr - Sa: 20:00 - 05:00 Uhr`,
-        image: "images/felix.jpg",
-        lat: 47.2719949,
-        lng: 11.3832109,
+        image: "felix.jpg",
+        lat: 47.265871,
+        lng: 11.398979,
     },
 
 ];
