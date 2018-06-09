@@ -332,7 +332,7 @@ const nightlife_clubs_ibkDaten= [{
         opens: `Mo: 20:00 - 04:00 Uhr,
                 Do: 18:00 - 04:00 Uhr,
                 Fr - Sa: 20:00 - 05:00 Uhr`,
-        image: "images/felix.jpg",
+        image: "images/felix.png",
         lat: 47.265871,
         lng: 11.398979,
     },
