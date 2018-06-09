@@ -13,13 +13,15 @@ let myMap = L.map("map");
 // für MapControl und fitBounds
 const preshopsMarker = L.featureGroup().addTo(myMap);
 const barMarker = L.featureGroup().addTo(myMap);
+const clubMarker = L.featureGroup().addTo(myMap);
 const breakfastMarker = L.featureGroup();//.addTo(myMap);
 const latesnacksMarker = L.featureGroup().addTo(myMap);
 const clustergrp = L.featureGroup().addTo(myMap);
 
 //für Plugin MarkerCluster (1)
 //const preshopsclmarkers = L.markerClusterGroup().addTo(myMap);
-//const barclmarkers = L.markerClusterGroup().addTo(myMap);
+const barmarkers = L.markerClusterGroup().addTo(myMap);
+const clubmarkers = L.markerClusterGroup().addTo(myMap);
 const breakfastclmarkers = L.markerClusterGroup().addTo(clustergrp);
 const latesnacksclmarker = L.featureGroup().addTo(myMap);
 
@@ -60,7 +62,8 @@ let myMapControl = L.control.layers({
 }, {
     "Overlay Beschriftung": myLayers.bmapoverlay,
     "Shops": preshopsMarker,
-    "Bars und Clubs": barMarker,
+    "Bars": barMarker,
+    "Clubs": clubMarker,
     "LateNight Snacks": latesnacksMarker,
     "Frühstücken": breakfastMarker,
     "Alle Marker": clustergrp,
@@ -106,12 +109,21 @@ const lsmarkerOptions = {
     opacity: 0.95
 }
 const barsmarkerOptions = {
-    title: "Bars und Clubs",
+    title: "Bars",
     //draggable: true,
     opacity: 0.95
 }
-
+const clubsmarkerOptions = {
+    title: "Clubs",
+    //draggable: true,
+    opacity: 0.95
 //Einzelne Marker erstellen und MarkerGruppe zuordnen inkl. Popup
+for (i = 0; i < nightlife_bf_ibkDaten.length; i++){
+    const bf = nightlife_bf_ibkDaten[i];
+    L.marker([bf.lat,bf.lng], bfmarkerOptions).addTo(breakfastMarker).bindPopup(`<p><img src=${bf.image} style="width: 75px; height: 75px;"></img> </br> Lokal: ${bf.titel} </br> Adresse: ${bf.adresse} </br> Telefon: ${bf.telnr} </br> Online: <a href='${bf.link}'>${bf.link}</a>  </br> EMail:<a href="${bf.email}">${bf.email}</a> </br> Öffnungszeiten:</br> ${bf.opens} </br></p>`);
+    L.marker([bf.lat,bf.lng], bfmarkerOptions).addTo(breakfastclmarkers).bindPopup(`<p><img src=${bf.image} style="width: 75px; height: 75px;"></img> </br> Lokal: ${bf.titel} </br> Adresse: ${bf.adresse} </br> Telefon: ${bf.telnr} </br> Online: <a href='${bf.link}'>${bf.link}</a>  </br> EMail:<a href="${bf.email}">${bf.email}</a> </br> Öffnungszeiten:</br> ${bf.opens} </br></p>`);
+}
+
 for (i = 0; i < nightlife_bf_ibkDaten.length; i++){
     const bf = nightlife_bf_ibkDaten[i];
     L.marker([bf.lat,bf.lng], bfmarkerOptions).addTo(breakfastMarker).bindPopup(`<p><img src=${bf.image} style="width: 75px; height: 75px;"></img> </br> Lokal: ${bf.titel} </br> Adresse: ${bf.adresse} </br> Telefon: ${bf.telnr} </br> Online: <a href='${bf.link}'>${bf.link}</a>  </br> EMail:<a href="${bf.email}">${bf.email}</a> </br> Öffnungszeiten:</br> ${bf.opens} </br></p>`);
