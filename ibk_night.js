@@ -181,12 +181,4 @@ myMap.fitBounds(clustergrp.getBounds());
 //Leaflet Hash Plugin (3)
 const hash = new L.Hash(myMap);
 
-/* 
-//Leaflet Search als Control hinzufügen (4)
-    myMap.addControl(new L.Control.Search({
-        layer: clustergrp,
-        propertyName: "titel"
-        })
-    );*/
-
 //ENDE
