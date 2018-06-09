@@ -21,7 +21,7 @@ const clustergrp = L.featureGroup().addTo(myMap);
 //const preshopsclmarkers = L.markerClusterGroup().addTo(myMap);
 //const barclmarkers = L.markerClusterGroup().addTo(myMap);
 const breakfastclmarkers = L.markerClusterGroup().addTo(clustergrp);
-//const latesnacksclmarker = L.featureGroup().addTo(myMap);
+const latesnacksclmarker = L.featureGroup().addTo(myMap);
 
 //Hintergrundkarten
 let myLayers = {
