@@ -140,7 +140,8 @@ const barsmarkerOptions = {
 const clubsmarkerOptions = {
     title: "Clubs",
     //draggable: true,
-    opacity: 0.95
+    opacity: 0.95,
+    icon: myIconclub,
 }
 //Einzelne Marker erstellen und MarkerGruppe zuordnen inkl. Popup
 for (i = 0; i < nightlife_bf_ibkDaten.length; i++){
