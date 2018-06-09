@@ -13,7 +13,11 @@ body {
 #header {
     text-align: center;
     background-color: dodgerblue;
+<<<<<<< HEAD
+    background-image: url('https://cdn.pixabay.com/photo/2017/07/07/12/42/street-2481384_1280.jpg');
+=======
     background-image: url("images/header.jpg");
+>>>>>>> d37d1be59ee04f0fd604004372ee496157eed6a3
     background-repeat: no-repeat;
     height: 360px;
 }
