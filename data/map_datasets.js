@@ -26,7 +26,7 @@ Datenobjekt für Nightlife Innbruck JSON Beispiel
     },
 
 */
-
+//--------------- BREAKFAST ------------------------------
 const nightlife_bf_ibkDaten = [{
         titel: "BreakfastClub",
         adresse: "Maria-Theresien-Straße 49",
@@ -132,6 +132,7 @@ const nightlife_bf_ibkDaten = [{
     },
 ];
 
+//--------------- PRESHOPS ------------------------------
 const nightlife_shops_ibkDaten = [{
         titel: "JET Stop & Shop",
         adresse: "Griesauweg 20",
@@ -139,7 +140,7 @@ const nightlife_shops_ibkDaten = [{
         telnr: "+43  512 397729",
         email: "austria@jet-tankstellen.at",
         opens: "Öffnungszeiten: täglich 06:00 - 23:00 Uhr",
-        image: "jet.jpg",
+        image: "images/jet.jpg",
         lat: 47.1552,
         lng: 11.2615,
     },
@@ -150,7 +151,7 @@ const nightlife_shops_ibkDaten = [{
         telnr: "+43 512 283735",
         email: "shell50288@shellstationen.at",
         opens: "Öffnungszeiten: täglich 06:00 - 23:59 Uhr",
-        image: "expresskranebitten.png",
+        image: "images/expresskranebitten.png",
         lat: 47.1553,
         lng: 11.2208,
     },
@@ -161,7 +162,7 @@ const nightlife_shops_ibkDaten = [{
         telnr: "+43  512 346137",
         email: "eh20597@sparmarkt.at",
         opens: "Öffnungszeiten: täglich 00:00 - 23:59 Uhr",
-        image: "expressdez.jpg",
+        image: "images/expressdez.jpg",
         lat: 47.1548,
         lng: 11.2546,
     },
@@ -172,7 +173,7 @@ const nightlife_shops_ibkDaten = [{
         telnr: "+43  512 581930",
         email: "-",
         opens: "Öffnungszeiten: Mo-Fr 07:00 - 19:00 Uhr  Sa 08:00 - 18:00 Uhr   So 08:00 - 17:00 Uhr ",
-        image: "klinik.jpg",
+        image: "images/klinik.jpg",
         lat: 47.1539,
         lng: 11.2309,
     },
@@ -183,12 +184,13 @@ const nightlife_shops_ibkDaten = [{
         telnr: "+43 5 0321 928068",
         email: "austria@jet-tankstellen.at",
         opens: "Öffnungszeiten: täglich 06:00 - 21:00 Uhr",
-        image: "bahnhof.jpg",
+        image: "images/bahnhof.jpg",
         lat: 47.1539,
         lng: 11.2401,
     },
 ];
 
+//--------------- BARS ------------------------------
 const nightlife_bars_ibkDaten = [{
         titel: "John Montagu",
         adresse: "Höttinger Gasse 7",
@@ -197,7 +199,7 @@ const nightlife_bars_ibkDaten = [{
         email: "joshua@johnmontagu.biz",
         opens: `Mo-Sa: 17:30 - 02:00 Uhr, 
                 So: geschlossen`,
-        image: "JM.jpg",
+        image: "images/JM.jpg",
         lat: 47.2689176,
         lng: 11.3889535,
     },
@@ -208,7 +210,7 @@ const nightlife_bars_ibkDaten = [{
         telnr: "+43 512 575190",
         email: "jollypost@jolly-bar.at",
         opens: `täglich ab 17:00 Uhr`,
-        image: "Jolly.jpg",
+        image: "images/Jolly.jpg",
         lat: 47.2611646,
         lng: 11.3917745,       
     },
@@ -221,7 +223,7 @@ const nightlife_bars_ibkDaten = [{
         opens: `Mo: geschlossen
                 Di-Sa: 11:00 - 02:00 Uhr,
                 So: 10:00 - 02:00 Uhr`,
-        image: "Moustache.jpg",
+        image: "images/Moustache.jpg",
         lat: 47.2693244,
         lng: 11.3924491,        
     },
@@ -233,7 +235,7 @@ const nightlife_bars_ibkDaten = [{
         email: "office@treibhaus.at",
         opens: `Mo-Sa: 10:00 - 01:00 Uhr, 
                 So: 16:00- 01:00`,
-        image: "Th.jpg",
+        image: "images/Th.jpg",
         lat: 47.2675726,
         lng: 11.3953586,
     },
@@ -244,7 +246,7 @@ const nightlife_bars_ibkDaten = [{
         telnr: "+43 512 581057",
         email: "office@zappa.at",
         opens: `täglich 18:00 - 02:00`,
-        image: "zappa.png",
+        image: "images/zappa.png",
         lat: 47.262087,
         lng: 11.383046,
     },
@@ -255,12 +257,13 @@ const nightlife_bars_ibkDaten = [{
         telnr: "+43 512 58201114",
         email: " - ",
         opens: `täglich 16:00 - 06:00`,
-        image: "irish.jpg",
+        image: "images/irish.jpg",
         lat: 47.2665115,
         lng: 11.393693,
         },            
 ];
 
+//--------------- CLUBS ------------------------------
 const nightlife_clubs_ibkDaten= [{
         titel: "Abyss",
         adresse: "Amraser-See-Str. 5",
@@ -269,7 +272,7 @@ const nightlife_clubs_ibkDaten= [{
         email: "info@abyssbar.com",
         opens: `Mi-Do: 19:30 - 03:00 Uhr,
                 Fr-Sa: 19:30 - 06:00 Uhr`,
-        image: "abyss.jpg",
+        image: "images/abyss.jpg",
         lat: 47.261363,
         lng: 11.422251,
     },
@@ -280,7 +283,7 @@ const nightlife_clubs_ibkDaten= [{
         telnr: "+43 512 890143",
         email: " - ",
         opens: `Fr-Sa: 23:00 - 06:00 Uhr`,
-        image: "cubique.jpg",
+        image: "images/cubique.jpg",
         lat: 47.2578698,
         lng: 11.4003268,
     },
@@ -304,7 +307,7 @@ const nightlife_clubs_ibkDaten= [{
         email: " - ",
         opens: `Fr: 24:00 - 8:00 Uhr,
                 Sa: 24:00 - 09:00 Uhr`,
-        image: "emma.jpg",
+        image: "images/emma.jpg",
         lat: 47.2675406,
         lng: 11.4018499,
     },
@@ -336,6 +339,7 @@ const nightlife_clubs_ibkDaten= [{
 
 ];
 
+//--------------- LATENIGHT SNACKS ------------------------------
 const nightlife_latesnack_ibkDaten = [{
     titel: "Kaiser Stube",
     adresse: "Museumstrasse 31",
@@ -343,7 +347,7 @@ const nightlife_latesnack_ibkDaten = [{
     telnr: "+43 512 589889",
     email: "office@kaiserstube.com",
     opens: "Öffnungszeiten: täglich 19:00 - 04:00 Uhr",
-    image: "kaiserstube.jpg",
+    image: "images/kaiserstube.jpg",
     lat: 47.1600,
     lng: 11.2404,
 },
@@ -354,7 +358,7 @@ const nightlife_latesnack_ibkDaten = [{
     telnr: "+43 512 263163",
     email: "info@chili-kebap.com",
     opens: "Öffnungszeiten: täglich 10:00 - 04:00 Uhr",
-    image:"chili,jpg",
+    image:"images/chili,jpg",
     lat: 47.1603,
     lng: 11.2345,
 },
@@ -365,7 +369,7 @@ const nightlife_latesnack_ibkDaten = [{
     telnr: "+43 512 570742 ",
     email: "-",
     opens: "Öffnungszeiten: täglich 18:00 - 02:00 Uhr",
-    image: "toskana.jpg",
+    image: "images/toskana.jpg",
     lat: 47.1602,
     lng: 11.2407,
 },
@@ -376,7 +380,7 @@ const nightlife_latesnack_ibkDaten = [{
     telnr: "+43 699 12903692 ",
     email: "@jedermanns.at",
     opens: "Öffnungszeiten: Mo-Do 10:30 - 22:00 Uhr  Fr-Sa 10:30 - 06:00 Uhr  So 15:00 - 22:00 Uhr",
-    image: "jedermanns.jpg",
+    image: "imagesjedermanns.jpg",
     lat: 47.1602,
     lng: 11.2344,
 },
@@ -387,7 +391,7 @@ const nightlife_latesnack_ibkDaten = [{
     telnr: "+43 664 3652344",
     email: "office@siedepunkt.at",
     opens: "Öffnungszeiten: täglich 18:30 - 02:00 Uhr",
-    image: "siedepunkt.jpg",
+    image: "images/siedepunkt.jpg",
     lat: 47.1556,
     lng: 11.2336,
 },
@@ -398,7 +402,7 @@ const nightlife_latesnack_ibkDaten = [{
     telnr: "+43 512 562807 ",
     email: "at-store0072@restaurant.at.mcd.com ",
     opens: "Öffnungszeiten: So-Do 08:00 - 00:00 Uhr  Fr-Sa 08:00 - 01:00 Uhr",
-    image: "mci.jpg",
+    image: "images/mci.jpg",
     lat: 47.1603,
     lng: 11.2336,
 },
@@ -409,7 +413,7 @@ const nightlife_latesnack_ibkDaten = [{
     telnr: "+43 664 5477199 ",
     email: "info@inndrinks.at",
     opens: "Öffnungszeiten: Mo-Do 20:00 - 02:00 Uhr  Fr-Sa 20:00 - 03:00 Uhr  So 18:00 - 00:00 Uhr",
-    image: "inndrinks.jpg",
+    image: "images/inndrinks.jpg",
     lat: 47.1554,
     lng: 11.2218,
 },

@@ -11,19 +11,20 @@ Ideen:
 let myMap = L.map("map");
 
 // für MapControl und fitBounds
-const preshopsMarker = L.featureGroup().addTo(myMap);
-const barMarker = L.featureGroup().addTo(myMap);
-const clubMarker = L.featureGroup().addTo(myMap);
+const preshopsMarker = L.featureGroup();//.addTo(myMap);
+const barMarker = L.featureGroup();//.addTo(myMap);
+const clubMarker = L.featureGroup();//.addTo(myMap);
 const breakfastMarker = L.featureGroup();//.addTo(myMap);
-const latesnacksMarker = L.featureGroup().addTo(myMap);
+const latesnacksMarker = L.featureGroup();//.addTo(myMap);
+//Cluster Marker für Plugin
 const clustergrp = L.featureGroup().addTo(myMap);
 
 //für Plugin MarkerCluster (1)
-//const preshopsclmarkers = L.markerClusterGroup().addTo(myMap);
-const barmarkers = L.markerClusterGroup().addTo(myMap);
-const clubmarkers = L.markerClusterGroup().addTo(myMap);
+const barclmarkers = L.markerClusterGroup().addTo(clustergrp);
+const clubclmarkers = L.markerClusterGroup().addTo(clustergrp);
 const breakfastclmarkers = L.markerClusterGroup().addTo(clustergrp);
-const latesnacksclmarker = L.featureGroup().addTo(myMap);
+const latesnacksclmarker = L.markerClusterGroup().addTo(clustergrp);
+const shopsclmarker = L.markerClusterGroup().addTo(clustergrp);
 
 //Hintergrundkarten
 let myLayers = {
@@ -86,8 +87,28 @@ let myMapScale = L.control.scale(
 myMap.addControl(new L.Control.Fullscreen());
 
 //icons
+//Breakfast
 const myIconbf = L.icon({
-    iconUrl: 'images/restaurant_breakfast(2).png',
+    iconUrl: 'images/icons/restaurant_breakfast(2).png',
+    iconAnchor: [16, 37]
+});
+//PreShops
+const myIconps = L.icon({
+    iconUrl: 'images/icons/star-3.png',
+    iconAnchor: [16, 37]
+});
+//Bars und Clubs
+const myIconbar = L.icon({
+    iconUrl: 'images/icons/bar.png',
+    iconAnchor: [16, 37]
+});
+const myIconclub = L.icon({
+    iconUrl: 'images/icons/bar_coktail.png',
+    iconAnchor: [16, 37]
+});
+//Latenight Snacks
+const myIconls = L.icon({
+    iconUrl: 'images/icons/fastfood(2).png',
     iconAnchor: [16, 37]
 });
 
@@ -101,17 +122,20 @@ const bfmarkerOptions = {
 const shopsmarkerOptions = {
     title: "PreShops",
     //draggable: true,
-    opacity: 0.95
+    opacity: 0.95,
+    icon: myIconps,
 }
 const lsmarkerOptions = {
     title: "Latenight Snacks",
     //draggable: true,
-    opacity: 0.95
+    opacity: 0.95,
+    icon: myIconls,
 }
 const barsmarkerOptions = {
     title: "Bars",
     //draggable: true,
-    opacity: 0.95
+    opacity: 0.95,
+    icon: myIconbar,
 }
 const clubsmarkerOptions = {
     title: "Clubs",
@@ -136,32 +160,35 @@ for (i = 0; i < nightlife_clubs_ibkDaten.length; i++){
     L.marker([cl.lat,cl.lng], clubsmarkerOptions ).addTo(clubMarker).bindPopup(`<p><img src=${cl.image} style="width: 75px; height: 75px;"></img> </br> Lokal: ${cl.titel} </br> Adresse: ${cl.adresse} </br> Telefon: ${cl.telnr} </br> Online: <a href='${cl.link}'>${cl.link}</a>  </br> EMail:<a href="${cl.email}">${cl.email}</a> </br> Öffnungszeiten:</br> ${cl.opens} </br></p>`);
     L.marker([cl.lat,cl.lng], clubsmarkerOptions).addTo(clubmarkers).bindPopup(`<p><img src=${cl.image} style="width: 75px; height: 75px;"></img> </br> Lokal: ${cl.titel} </br> Adresse: ${cl.adresse} </br> Telefon: ${cl.telnr} </br> Online: <a href='${cl.link}'>${cl.link}</a>  </br> EMail:<a href="${cl.email}">${cl.email}</a> </br> Öffnungszeiten:</br> ${cl.opens} </br></p>`);
 }
-
-//Funktioniert noch nicht, keine ahnung warum??!!
+//marker Pre Shops
 for (i = 0; i < nightlife_shops_ibkDaten.length; i++){
     const shops = nightlife_shops_ibkDaten[i];
-    
-    //L.marker([shops.lat,shops.lng], shopsmarkerOptions).addTo(preshopsMarker).bindPopup(`<p><img src=${shops.image}></img> </br> Lokal: ${shops.titel} </br> Adresse: ${shops.adresse} </br> Reservierung: ${shops.telnr} </br> online: <a href='${shops.link}'>${shops.link}</a>  </br> EMail:<a href="${shops.email}">${shops.email}</a> </br> Öffnungszeiten:</br> ${shops.opens} </br></p>`);
-    L.marker([shops.lat,shops.lng], shopsmarkerOptions).addTo(preshopsMarker).bindPopup(`<p> Lokal: ${shops.titel} </br> Adresse: ${shops.info} </br> Telefon: ${shops.attribute1} </br> online: <a href='${shops.metadaten}'>${shops.metadaten}</a>  </br> EMail:<a href="${shops.attribute2}">${shops.attribute2}</a> </br> Öffnungszeiten:</br> ${shops.attribute3} </br></p>`);
-
-}
-//Funktioniert noch nicht, keine ahnung warum??!!
+    L.marker([shops.lat,shops.lng], shopsmarkerOptions).addTo(preshopsMarker).bindPopup(`<p><img src=${shops.image} style="width: 75px; height: 75px></img> </br> Lokal: ${shops.titel} </br> Adresse: ${shops.adresse} </br> Reservierung: ${shops.telnr} </br> online: <a href='${shops.link}'>${shops.link}</a>  </br> EMail:<a href="${shops.email}">${shops.email}</a> </br> Öffnungszeiten:</br> ${shops.opens} </br></p>`);
+    L.marker([shops.lat,shops.lng], shopsmarkerOptions).addTo(shopsclmarker).bindPopup(`<p><img src=${shops.image} style="width: 75px; height: 75px></img> </br> Lokal: ${shops.titel} </br> Adresse: ${shops.adresse} </br> Reservierung: ${shops.telnr} </br> online: <a href='${shops.link}'>${shops.link}</a>  </br> EMail:<a href="${shops.email}">${shops.email}</a> </br> Öffnungszeiten:</br> ${shops.opens} </br></p>`);
+  }
+//Marker latenight Snacks
 for (i = 0; i < nightlife_latesnack_ibkDaten.length; i++){
     const ls = nightlife_latesnack_ibkDaten[i];
-        
-    L.marker([ls.lat,ls.lng], lsmarkerOptions).addTo(latesnacksMarker).bindPopup(`<p> Lokal: ${ls.titel} </br> Adresse: ${ls.info} </br> Telefon: ${ls.attribute1} </br> online: <a href='${ls.metadaten}'>${ls.metadaten}</a>  </br> EMail:<a href="${ls.attribute2}">${ls.attribute2}</a> </br> Öffnungszeiten:</br> ${ls.attribute3} </br></p>`);
-    /*console.log(ls.lat);
-    console.log(ls.lng);
-    console.log(ls.titel);
-    console.log(ls.info);
-    console.log(ls.metadaten);
-    console.log(ls.attribute1);
-    console.log(ls.attribute2);
-    console.log(ls.attribute3);*/
+    L.marker([ls.lat,ls.lng], lsmarkerOptions).addTo(latesnacksMarker).bindPopup(`<p><img src=${ls.image} style="width: 75px; height: 75px></img> </br> Lokal: ${ls.titel} </br> Adresse: ${ls.adresse} </br> Reservierung: ${ls.telnr} </br> online: <a href='${ls.link}'>${ls.link}</a>  </br> EMail:<a href="${ls.email}">${ls.email}</a> </br> Öffnungszeiten:</br> ${ls.opens} </br></p>`);
+    L.marker([ls.lat,ls.lng], lsmarkerOptions).addTo(latesnacksclmarker).bindPopup(`<p><img src=${ls.image} style="width: 75px; height: 75px></img> </br> Lokal: ${ls.titel} </br> Adresse: ${ls.adresse} </br> Reservierung: ${ls.telnr} </br> online: <a href='${ls.link}'>${ls.link}</a>  </br> EMail:<a href="${ls.email}">${ls.email}</a> </br> Öffnungszeiten:</br> ${ls.opens} </br></p>`);
+ }
+ //Marker Bars und Clubs
+for (i = 0; i < nightlife_bars_ibkDaten.length; i++){
+    const bars = nightlife_bars_ibkDaten[i];
+    L.marker([bars.lat,bars.lng], barsmarkerOptions).addTo(barMarker).bindPopup(`<p><img src=${bars.image} style="width: 75px; height: 75px></img> </br> Lokal: ${bars.titel} </br> Adresse: ${bars.adresse} </br> Reservierung: ${bars.telnr} </br> online: <a href='${bars.link}'>${bars.link}</a>  </br> EMail:<a href="${bars.email}">${bars.email}</a> </br> Öffnungszeiten:</br> ${bars.opens} </br></p>`);
+    L.marker([bars.lat,bars.lng], barsmarkerOptions).addTo(barclmarkers).bindPopup(`<p><img src=${bars.image} style="width: 75px; height: 75px></img> </br> Lokal: ${bars.titel} </br> Adresse: ${bars.adresse} </br> Reservierung: ${bars.telnr} </br> online: <a href='${bars.link}'>${bars.link}</a>  </br> EMail:<a href="${bars.email}">${bars.email}</a> </br> Öffnungszeiten:</br> ${bars.opens} </br></p>`);
+ }
+ for (i = 0; i < nightlife_clubs_ibkDaten.length; i++){
+    const club = nightlife_clubs_ibkDaten[i];
+    L.marker([club.lat,club.lng], clubsmarkerOptions).addTo(clubMarker).bindPopup(`<p><img src=${club.image} style="width: 75px; height: 75px></img> </br> Lokal: ${club.titel} </br> Adresse: ${club.adresse} </br> Reservierung: ${club.telnr} </br> online: <a href='${club.link}'>${club.link}</a>  </br> EMail:<a href="${club.email}">${club.email}</a> </br> Öffnungszeiten:</br> ${club.opens} </br></p>`);
+    L.marker([club.lat,club.lng], clubsmarkerOptions).addTo(clubclmarkers).bindPopup(`<p><img src=${club.image} style="width: 75px; height: 75px></img> </br> Lokal: ${club.titel} </br> Adresse: ${club.adresse} </br> Reservierung: ${club.telnr} </br> online: <a href='${club.link}'>${club.link}</a>  </br> EMail:<a href="${club.email}">${club.email}</a> </br> Öffnungszeiten:</br> ${club.opens} </br></p>`);
  }
 
 //Start Ansicht - Zoom
-myMap.setView([47.26,11.39],14);
+//myMap.setView([47.26,11.39],14);
+
+//Start auf MarkerGruppe
+myMap.fitBounds(clustergrp.getBounds()); 
 
 //Leaflet Hash Plugin (3)
 const hash = new L.Hash(myMap);
@@ -174,7 +201,6 @@ const hash = new L.Hash(myMap);
         })
     );*/
 
-//Start auf MarkerGruppe
-//myMap.fitBounds(breakfastMarker.getBounds()); 
+
 
 //ENDE
