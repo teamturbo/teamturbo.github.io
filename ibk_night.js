@@ -153,25 +153,25 @@ for (i = 0; i < nightlife_bf_ibkDaten.length; i++){
 //marker Pre Shops
 for (i = 0; i < nightlife_shops_ibkDaten.length; i++){
     const shops = nightlife_shops_ibkDaten[i];
-    L.marker([shops.lat,shops.lng], shopsmarkerOptions).addTo(preshopsMarker).bindPopup(`<p><img src=${shops.image} style="width: 75px; height: 75px></img> </br> Lokal: ${shops.titel} </br> Adresse: ${shops.adresse} </br> Reservierung: ${shops.telnr} </br> online: <a href='${shops.link}'>${shops.link}</a>  </br> EMail:<a href="${shops.email}">${shops.email}</a> </br> Öffnungszeiten:</br> ${shops.opens} </br></p>`);
-    L.marker([shops.lat,shops.lng], shopsmarkerOptions).addTo(shopsclmarker).bindPopup(`<p><img src=${shops.image} style="width: 75px; height: 75px></img> </br> Lokal: ${shops.titel} </br> Adresse: ${shops.adresse} </br> Reservierung: ${shops.telnr} </br> online: <a href='${shops.link}'>${shops.link}</a>  </br> EMail:<a href="${shops.email}">${shops.email}</a> </br> Öffnungszeiten:</br> ${shops.opens} </br></p>`);
+    L.marker([shops.lat,shops.lng], shopsmarkerOptions).addTo(preshopsMarker).bindPopup(`<p><img src=${shops.image}></img> </br> Lokal: ${shops.titel} </br> Adresse: ${shops.adresse} </br> Reservierung: ${shops.telnr} </br> Online: <a href='${shops.link}'>${shops.link}</a>  </br> EMail:<a href="${shops.email}">${shops.email}</a> </br> Öffnungszeiten:</br> ${shops.opens} </br></p>`);
+    L.marker([shops.lat,shops.lng], shopsmarkerOptions).addTo(shopsclmarker).bindPopup(`<p><img src=${shops.image}></img> </br> Lokal: ${shops.titel} </br> Adresse: ${shops.adresse} </br> Reservierung: ${shops.telnr} </br> Online: <a href='${shops.link}'>${shops.link}</a>  </br> EMail:<a href="${shops.email}">${shops.email}</a> </br> Öffnungszeiten:</br> ${shops.opens} </br></p>`);
   }
 //Marker latenight Snacks
 for (i = 0; i < nightlife_latesnack_ibkDaten.length; i++){
     const ls = nightlife_latesnack_ibkDaten[i];
-    L.marker([ls.lat,ls.lng], lsmarkerOptions).addTo(latesnacksMarker).bindPopup(`<p><img src=${ls.image} style="width: 75px; height: 75px></img> </br> Lokal: ${ls.titel} </br> Adresse: ${ls.adresse} </br> Reservierung: ${ls.telnr} </br> online: <a href='${ls.link}'>${ls.link}</a>  </br> EMail:<a href="${ls.email}">${ls.email}</a> </br> Öffnungszeiten:</br> ${ls.opens} </br></p>`);
-    L.marker([ls.lat,ls.lng], lsmarkerOptions).addTo(latesnacksclmarker).bindPopup(`<p><img src=${ls.image} style="width: 75px; height: 75px></img> </br> Lokal: ${ls.titel} </br> Adresse: ${ls.adresse} </br> Reservierung: ${ls.telnr} </br> online: <a href='${ls.link}'>${ls.link}</a>  </br> EMail:<a href="${ls.email}">${ls.email}</a> </br> Öffnungszeiten:</br> ${ls.opens} </br></p>`);
+    L.marker([ls.lat,ls.lng], lsmarkerOptions).addTo(latesnacksMarker).bindPopup(`<p><img src=${ls.image}></img> </br> Lokal: ${ls.titel} </br> Adresse: ${ls.adresse} </br> Reservierung: ${ls.telnr} </br> Online: <a href='${ls.link}'>${ls.link}</a>  </br> EMail:<a href="${ls.email}">${ls.email}</a> </br> Öffnungszeiten:</br> ${ls.opens} </br></p>`);
+    L.marker([ls.lat,ls.lng], lsmarkerOptions).addTo(latesnacksclmarker).bindPopup(`<p><img src=${ls.image}></img> </br> Lokal: ${ls.titel} </br> Adresse: ${ls.adresse} </br> Reservierung: ${ls.telnr} </br> Online: <a href='${ls.link}'>${ls.link}</a>  </br> EMail:<a href="${ls.email}">${ls.email}</a> </br> Öffnungszeiten:</br> ${ls.opens} </br></p>`);
  }
  //Marker Bars und Clubs
 for (i = 0; i < nightlife_bars_ibkDaten.length; i++){
     const bars = nightlife_bars_ibkDaten[i];
-    L.marker([bars.lat,bars.lng], barsmarkerOptions).addTo(barMarker).bindPopup(`<p><img src=${bars.image} style="width: 75px; height: 75px></img> </br> Lokal: ${bars.titel} </br> Adresse: ${bars.adresse} </br> Reservierung: ${bars.telnr} </br> online: <a href='${bars.link}'>${bars.link}</a>  </br> EMail:<a href="${bars.email}">${bars.email}</a> </br> Öffnungszeiten:</br> ${bars.opens} </br></p>`);
-    L.marker([bars.lat,bars.lng], barsmarkerOptions).addTo(barclmarkers).bindPopup(`<p><img src=${bars.image} style="width: 75px; height: 75px></img> </br> Lokal: ${bars.titel} </br> Adresse: ${bars.adresse} </br> Reservierung: ${bars.telnr} </br> online: <a href='${bars.link}'>${bars.link}</a>  </br> EMail:<a href="${bars.email}">${bars.email}</a> </br> Öffnungszeiten:</br> ${bars.opens} </br></p>`);
+    L.marker([bars.lat,bars.lng], barsmarkerOptions).addTo(barMarker).bindPopup(`<p><img src=${bars.image}></img> </br> Lokal: ${bars.titel} </br> Adresse: ${bars.adresse} </br> Reservierung: ${bars.telnr} </br> Online: <a href='${bars.link}'>${bars.link}</a>  </br> EMail:<a href="${bars.email}">${bars.email}</a> </br> Öffnungszeiten:</br> ${bars.opens} </br></p>`);
+    L.marker([bars.lat,bars.lng], barsmarkerOptions).addTo(barclmarkers).bindPopup(`<p><img src=${bars.image}></img> </br> Lokal: ${bars.titel} </br> Adresse: ${bars.adresse} </br> Reservierung: ${bars.telnr} </br> Online: <a href='${bars.link}'>${bars.link}</a>  </br> EMail:<a href="${bars.email}">${bars.email}</a> </br> Öffnungszeiten:</br> ${bars.opens} </br></p>`);
  }
  for (i = 0; i < nightlife_clubs_ibkDaten.length; i++){
     const club = nightlife_clubs_ibkDaten[i];
-    L.marker([club.lat,club.lng], clubsmarkerOptions).addTo(clubMarker).bindPopup(`<p><img src=${club.image} style="width: 75px; height: 75px></img> </br> Lokal: ${club.titel} </br> Adresse: ${club.adresse} </br> Reservierung: ${club.telnr} </br> online: <a href='${club.link}'>${club.link}</a>  </br> EMail:<a href="${club.email}">${club.email}</a> </br> Öffnungszeiten:</br> ${club.opens} </br></p>`);
-    L.marker([club.lat,club.lng], clubsmarkerOptions).addTo(clubclmarkers).bindPopup(`<p><img src=${club.image} style="width: 75px; height: 75px></img> </br> Lokal: ${club.titel} </br> Adresse: ${club.adresse} </br> Reservierung: ${club.telnr} </br> online: <a href='${club.link}'>${club.link}</a>  </br> EMail:<a href="${club.email}">${club.email}</a> </br> Öffnungszeiten:</br> ${club.opens} </br></p>`);
+    L.marker([club.lat,club.lng], clubsmarkerOptions).addTo(clubMarker).bindPopup(`<p><img src=${club.image}></img> </br> Lokal: ${club.titel} </br> Adresse: ${club.adresse} </br> Reservierung: ${club.telnr} </br> Online: <a href='${club.link}'>${club.link}</a>  </br> EMail:<a href="${club.email}">${club.email}</a> </br> Öffnungszeiten:</br> ${club.opens} </br></p>`);
+    L.marker([club.lat,club.lng], clubsmarkerOptions).addTo(clubclmarkers).bindPopup(`<p><img src=${club.image}></img> </br> Lokal: ${club.titel} </br> Adresse: ${club.adresse} </br> Reservierung: ${club.telnr} </br> Online: <a href='${club.link}'>${club.link}</a>  </br> EMail:<a href="${club.email}">${club.email}</a> </br> Öffnungszeiten:</br> ${club.opens} </br></p>`);
  }
 
 //Start Ansicht - Zoom
@@ -190,7 +190,5 @@ const hash = new L.Hash(myMap);
         propertyName: "titel"
         })
     );*/
-
-
 
 //ENDE
