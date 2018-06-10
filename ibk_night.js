@@ -72,7 +72,6 @@ let myMapControl = L.control.layers({
         collapsed: true
     }).addTo(myMap);
 
-
 //Maßstaß erstellen und hinzufügen
 let myMapScale = L.control.scale(
     {
@@ -94,7 +93,7 @@ const myIconbf = L.icon({
 });
 //PreShops
 const myIconps = L.icon({
-    iconUrl: 'images/icons/star-3.png',
+    iconUrl: 'images/icons/star-3.png', //Icon noch zu tauschen, zb unter https://mapicons.mapsmarker.com/ suchen und unter images/icons speichern
     iconAnchor: [16, 37]
 });
 //Bars und Clubs
@@ -115,31 +114,26 @@ const myIconls = L.icon({
 //Einstellungen für die Darstellung der Marker inkl. Icon
 const bfmarkerOptions = {
     title: "Frühstücken",
-    //draggable: true,
     opacity: 0.95,
     icon: myIconbf,
 }
 const shopsmarkerOptions = {
     title: "PreShops",
-    //draggable: true,
     opacity: 0.95,
     icon: myIconps,
 }
 const lsmarkerOptions = {
     title: "Latenight Snacks",
-    //draggable: true,
     opacity: 0.95,
     icon: myIconls,
 }
 const barsmarkerOptions = {
     title: "Bars",
-    //draggable: true,
     opacity: 0.95,
     icon: myIconbar,
 }
 const clubsmarkerOptions = {
     title: "Clubs",
-    //draggable: true,
     opacity: 0.95,
     icon: myIconclub,
 }
