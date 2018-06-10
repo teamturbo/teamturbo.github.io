@@ -358,7 +358,7 @@ const nightlife_latesnack_ibkDaten = [{
     telnr: "+43 512 263163",
     email: "info@chili-kebap.com",
     opens: "Öffnungszeiten: täglich 10:00 - 04:00 Uhr",
-    image:"images/chili,jpg",
+    image:"images/chili.jpg",
     lat: 47.26761905,
     lng: 11.39616007,
 },
