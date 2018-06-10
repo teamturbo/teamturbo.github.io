@@ -163,7 +163,7 @@ const nightlife_shops_ibkDaten = [{
         email: "eh20597@sparmarkt.at",
         opens: "Öffnungszeiten: täglich 00:00 - 23:59 Uhr",
         image: "images/expressdez.jpg",
-        lat: 47.26283819,
+        lat: 47.2628381,
         lng: 11.4616205,
     },
     {
@@ -175,7 +175,7 @@ const nightlife_shops_ibkDaten = [{
         opens: "Öffnungszeiten: Mo-Fr 07:00 - 19:00 Uhr  Sa 08:00 - 18:00 Uhr   So 08:00 - 17:00 Uhr ",
         image: "images/klinik.jpg",
         lat: 47.2624059,
-        lng: 11.3868181
+        lng: 11.3868181,
     },
     {
         titel: "MPreis Bahnhof",
