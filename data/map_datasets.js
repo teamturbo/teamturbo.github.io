@@ -152,8 +152,8 @@ const nightlife_shops_ibkDaten = [{
         email: "shell50288@shellstationen.at",
         opens: "Öffnungszeiten: täglich 06:00 - 23:59 Uhr",
         image: "images/expresskranebitten.png",
-        lat: 47.26671528,
-        lng: 11.37760052,
+        lat: 47.26485388,
+        lng: 11.36891631,
     },
     {
         titel: "Spar Express DEZ",
@@ -163,8 +163,8 @@ const nightlife_shops_ibkDaten = [{
         email: "eh20597@sparmarkt.at",
         opens: "Öffnungszeiten: täglich 00:00 - 23:59 Uhr",
         image: "images/expressdez.jpg",
-        lat: 47.2628381,
-        lng: 11.4616205,
+        lat: 47.26316209,
+        lng: 11.42949113,
     },
     {
         titel: "Klinik Spar",
@@ -174,8 +174,8 @@ const nightlife_shops_ibkDaten = [{
         email: "-",
         opens: "Öffnungszeiten: Mo-Fr 07:00 - 19:00 Uhr  Sa 08:00 - 18:00 Uhr   So 08:00 - 17:00 Uhr ",
         image: "images/klinik.jpg",
-        lat: 47.2624059,
-        lng: 11.3868181,
+        lat: 47.26247672,
+        lng: 11.38683818,
     },
     {
         titel: "MPreis Bahnhof",
@@ -370,8 +370,8 @@ const nightlife_latesnack_ibkDaten = [{
     email: "-",
     opens: "Öffnungszeiten: täglich 18:00 - 02:00 Uhr",
     image: "images/toskana.jpg",
-    lat: 47.26698814,
-    lng: 11.40371572,
+    lat: 47.26710317,
+    lng: 11.40147901,
 },
 {
     titel: "Jedermann`s",
