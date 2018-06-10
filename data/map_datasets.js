@@ -414,7 +414,7 @@ const nightlife_latesnack_ibkDaten = [{
     email: "info@inndrinks.at",
     opens: "Öffnungszeiten: Mo-Do 20:00 - 02:00 Uhr  Fr-Sa 20:00 - 03:00 Uhr  So 18:00 - 00:00 Uhr",
     image: "images/inndrinks.jpg",
-    lat: 47.25445153,
+    lat: 47.2544515,
     lng: 11.3893146,
 },
 ];
