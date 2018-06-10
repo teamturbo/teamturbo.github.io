@@ -380,7 +380,7 @@ const nightlife_latesnack_ibkDaten = [{
     telnr: "+43 699 12903692 ",
     email: "@jedermanns.at",
     opens: "Öffnungszeiten: Mo-Do 10:30 - 22:00 Uhr  Fr-Sa 10:30 - 06:00 Uhr  So 15:00 - 22:00 Uhr",
-    image: "imagesjedermanns.jpg",
+    image: "images/jedermanns.jpg",
     lat: 47.2673363,
     lng: 11.3956699,
 },
