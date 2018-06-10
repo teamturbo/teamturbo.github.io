@@ -258,7 +258,7 @@ const nightlife_bars_ibkDaten = [{
         email: " - ",
         opens: `täglich 16:00 - 06:00`,
         image: "images/irish.jpg",
-        lat: 47.2665115,
+        lat: 47.266511,
         lng: 11.393693,
         },            
 ];
@@ -349,7 +349,7 @@ const nightlife_latesnack_ibkDaten = [{
     opens: "Öffnungszeiten: täglich 19:00 - 04:00 Uhr",
     image: "images/kaiserstube.jpg",
     lat: 47.2666195,
-    lng: 11.40095088,
+    lng: 11.4009508,
 },
 {
     titel: "Chili Kebab",
@@ -381,7 +381,7 @@ const nightlife_latesnack_ibkDaten = [{
     email: "@jedermanns.at",
     opens: "Öffnungszeiten: Mo-Do 10:30 - 22:00 Uhr  Fr-Sa 10:30 - 06:00 Uhr  So 15:00 - 22:00 Uhr",
     image: "imagesjedermanns.jpg",
-    lat: 47.26733633,
+    lat: 47.2673363,
     lng: 11.3956699,
 },
 {
