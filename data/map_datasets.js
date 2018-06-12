@@ -169,7 +169,7 @@ const nightlife_shops_ibkDaten = [{
     {
         titel: "Klinik Spar",
         adresse: "Anichstraße 35",
-        link: "https://www.jet-tankstellen.at/de/tankstellen/details.php",
+        link: "https://www.spar.at/standorte/spar-innsbruck-6020-anichstrasse-35",
         telnr: "+43  512 581930",
         email: "-",
         opens: "Öffnungszeiten: Mo-Fr 07:00 - 19:00 Uhr  Sa 08:00 - 18:00 Uhr   So 08:00 - 17:00 Uhr ",
