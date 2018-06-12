@@ -93,7 +93,7 @@ const myIconbf = L.icon({
 });
 //PreShops
 const myIconps = L.icon({
-    iconUrl: 'images/icons/star-3.png', //Icon noch zu tauschen, zb unter https://mapicons.mapsmarker.com/ suchen und unter images/icons speichern
+    iconUrl: 'images/icons/star4.png', 
     iconAnchor: [16, 37]
 });
 //Bars und Clubs
